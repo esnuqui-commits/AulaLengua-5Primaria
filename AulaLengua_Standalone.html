@@ -1,56 +1,210 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AulaLengua · 5.º Primaria CLM (Standalone)</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    body { font-family: system-ui, -apple-system, sans-serif; }
-    .card { transition: all 0.2s ease; }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1); }
-    .nav-active { background: linear-gradient(135deg, #1e40af, #0ea5e9); color: white !important; }
-    .badge-min { background: #dcfce7; color: #166534; }
-    .badge-pending { background: #fef3c7; color: #92400e; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AulaLengua · 5.º Primaria CLM</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+body{font-family:system-ui,sans-serif}
+.nav-active{background:linear-gradient(135deg,#1e40af,#0ea5e9);color:#fff!important}
+.badge-min{background:#dcfce7;color:#166534}
+.badge-pending{background:#fef3c7;color:#92400e}
+</style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen">
-  <div class="flex min-h-screen">
-    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col fixed h-full z-20 shadow-sm">
-      <div class="p-5 border-b">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-700 to-sky-500 flex items-center justify-center text-white font-bold text-lg">AL</div>
-          <div>
-            <h1 class="font-bold text-lg leading-tight">AulaLengua</h1>
-            <p class="text-xs text-slate-500">5.º Primaria · CLM · Standalone</p>
-          </div>
-        </div>
-      </div>
-      <nav class="flex-1 p-3 space-y-1" id="nav">
-        <button data-view="home" class="nav-btn w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 nav-active text-sm"><i class="fas fa-home w-5"></i> Inicio</button>
-        <button data-view="books" class="nav-btn w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 hover:bg-slate-100 text-sm"><i class="fas fa-book w-5"></i> Mis libros SM</button>
-        <button data-view="units" class="nav-btn w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 hover:bg-slate-100 text-sm"><i class="fas fa-layer-group w-5"></i> Unidades</button>
-        <button data-view="bank" class="nav-btn w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 hover:bg-slate-100 text-sm"><i class="fas fa-database w-5"></i> Banco de ejercicios</button>
-        <button data-view="curriculum" class="nav-btn w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 hover:bg-slate-100 text-sm"><i class="fas fa-balance-scale w-5"></i> Criterios</button>
-        <button data-view="create" class="nav-btn w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 hover:bg-slate-100 text-sm"><i class="fas fa-file-alt w-5"></i> Crear examen</button>
-        <button data-view="exams" class="nav-btn w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 hover:bg-slate-100 text-sm"><i class="fas fa-folder-open w-5"></i> Mis exámenes</button>
-        <button data-view="config" class="nav-btn w-full text-left px-4 py-2.5 rounded-lg flex items-center gap-3 hover:bg-slate-100 text-sm"><i class="fas fa-cog w-5"></i> Configuración</button>
-      </nav>
-      <div class="p-4 border-t text-xs text-slate-500">
-        Decreto 81/2022 · LOMLOE<br>Versión standalone (sin servidor)
-      </div>
-    </aside>
+<div class="flex min-h-screen">
+<aside class="w-56 bg-white border-r fixed h-full z-20">
+<div class="p-4 border-b flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-700 to-sky-500 text-white font-bold flex items-center justify-center">AL</div>
+<div><div class="font-bold text-sm">AulaLengua</div><div class="text-xs text-slate-500">5.º Primaria · CLM</div></div>
+</div>
+<nav class="p-2 space-y-1 text-sm" id="nav">
+<button data-view="home" class="nav-btn w-full text-left px-3 py-2 rounded-lg nav-active flex items-center gap-2"><i class="fas fa-home w-4"></i>Inicio</button>
+<button data-view="units" class="nav-btn w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-layer-group w-4"></i>Unidades</button>
+<button data-view="bank" class="nav-btn w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-database w-4"></i>Banco</button>
+<button data-view="curriculum" class="nav-btn w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-balance-scale w-4"></i>Criterios</button>
+<button data-view="create" class="nav-btn w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-file-alt w-4"></i>Crear examen</button>
+<button data-view="exams" class="nav-btn w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-folder-open w-4"></i>Mis exámenes</button>
+</nav>
+<div class="p-3 border-t text-xs text-slate-500">Decreto 81/2022 · Standalone</div>
+</aside>
+<main class="flex-1 ml-56 p-6" id="content"></main>
+</div>
+<script>
+const CURR = [
+{codigo:"4.1",redaccion:"Comprender el sentido global y la información relevante de textos escritos, realizando inferencias.",competencia:"4. Comprensión lectora",saberes:"Comprensión de textos escritos"},
+{codigo:"4.2",redaccion:"Analizar el contenido y aspectos formales elementales de textos escritos.",competencia:"4. Comprensión lectora",saberes:"Análisis formal y de contenido"},
+{codigo:"5.1",redaccion:"Producir textos escritos de relativa complejidad con coherencia y adecuación.",competencia:"5. Producción escrita",saberes:"Producción de textos escritos"},
+{codigo:"2.1",redaccion:"Comprender textos orales y multimodales valorando elementos no verbales.",competencia:"2. Comprensión oral",saberes:"Elementos verbales y no verbales"},
+{codigo:"9.1",redaccion:"Reflexionar sobre la lengua: tiempos verbales, estructura del verbo, acentuación.",competencia:"9. Reflexión sobre la lengua",saberes:"Gramática y ortografía"},
+{codigo:"9.2",redaccion:"Aplicar procedimientos de formación de palabras (prefijos y sufijos).",competencia:"9. Reflexión sobre la lengua",saberes:"Morfología derivativa"},
+{codigo:"8.1",redaccion:"Interpretar textos literarios y valorar la imaginación del personaje.",competencia:"8. Educación literaria",saberes:"Interpretación literaria"}
+];
+const SECTIONS = [
+{id:1,title:"Comprensión lectora – Ana de las Tejas Verdes",unit:1,contents:"Fragmento literario, emociones, imaginación, metáforas."},
+{id:2,title:"Comunicación y diario personal",unit:1,contents:"Comunicación verbal/no verbal, estructura del diario."},
+{id:3,title:"Gramática: Los verbos",unit:1,contents:"Tiempos verbales, imperativo, raíz y desinencia."},
+{id:4,title:"Vocabulario y morfología",unit:1,contents:"Antónimos con prefijo, familias léxicas, formación de palabras."},
+{id:5,title:"Ortografía: La tilde",unit:1,contents:"Agudas, llanas, esdrújulas, tilde diacrítica."}
+];
+let exercises = [
+{id:1,section_id:1,enunciado:"¿Cómo se siente Ana al ver el paisaje? Marca y explica con una frase del texto.",solucion:"c) Emocionada y maravillada. «¡Oh, era maravilloso, maravilloso!»",tipo:"comprensión",criterio:"4.1",dificultad:"baja",puntuacion:2},
+{id:2,section_id:1,enunciado:"¿Por qué Ana cambia los nombres de los lugares?",solucion:"Porque prefiere nombres más imaginativos y bonitos que reflejen la belleza del lugar.",tipo:"comprensión",criterio:"4.1",dificultad:"media",puntuacion:2},
+{id:3,section_id:1,enunciado:"Escribe dos sensaciones o emociones de Ana.",solucion:"Emoción / maravilla / alegría.",tipo:"comprensión",criterio:"4.1",dificultad:"baja",puntuacion:2},
+{id:4,section_id:1,enunciado:"¿Qué significa «una sinfonía de gloriosos tonos»?",solucion:"El agua tenía muchos colores bonitos y brillantes (metáfora).",tipo:"comprensión",criterio:"4.2",dificultad:"media",puntuacion:2},
+{id:5,section_id:2,enunciado:"La comunicación puede ser verbal o no verbal (usa _____ y _____).",solucion:"gestos / expresiones / tono de voz",tipo:"comunicación",criterio:"2.1",dificultad:"baja",puntuacion:2},
+{id:6,section_id:2,enunciado:"Ordena las partes de un diario: Reflexión, Saludo, Narración, Fecha.",solucion:"1 Fecha – 2 Saludo – 3 Narración – 4 Reflexión",tipo:"expresión escrita",criterio:"5.1",dificultad:"baja",puntuacion:2},
+{id:7,section_id:2,enunciado:"Escribe 4-5 líneas en tu diario sobre el tiempo de hoy.",solucion:"Se valora fecha, saludo, narración y sentimientos.",tipo:"expresión escrita",criterio:"5.1",dificultad:"media",puntuacion:2},
+{id:8,section_id:2,enunciado:"Identifica dos elementos no verbales de la comunicación.",solucion:"Gestos, tono de voz, expresión facial...",tipo:"comunicación",criterio:"2.1",dificultad:"baja",puntuacion:2},
+{id:9,section_id:3,enunciado:"Indica el tiempo: a) llegaron b) brillará c) estoy contenta d) hemos visto",solucion:"a) pasado b) futuro c) presente d) pasado",tipo:"gramática",criterio:"9.1",dificultad:"baja",puntuacion:2},
+{id:10,section_id:3,enunciado:"Transforma al pasado: Rodrigo cierra las ventanas.",solucion:"Rodrigo cerró / cerraba las ventanas.",tipo:"gramática",criterio:"9.1",dificultad:"media",puntuacion:2},
+{id:11,section_id:3,enunciado:"Escribe una orden (imperativo): Un padre pide que bajen la basura.",solucion:"¡Bajad / Baja la basura!",tipo:"gramática",criterio:"9.1",dificultad:"media",puntuacion:2},
+{id:12,section_id:3,enunciado:"Separa raíz y desinencia: caminábamos / miraré",solucion:"camin- + -ábamos ; mir- + -aré",tipo:"gramática",criterio:"9.1",dificultad:"media",puntuacion:2},
+{id:13,section_id:4,enunciado:"Antónimo con prefijo: posible, típico, aparecer",solucion:"imposible, atípico, desaparecer",tipo:"vocabulario",criterio:"9.2",dificultad:"baja",puntuacion:2},
+{id:14,section_id:4,enunciado:"Completa la familia: encubrir – ___ – descubrir",solucion:"cubrir",tipo:"vocabulario",criterio:"9.2",dificultad:"media",puntuacion:2},
+{id:15,section_id:4,enunciado:"Completa: Es ___ que mañana hagamos la excursión (posible).",solucion:"imposible",tipo:"vocabulario",criterio:"9.2",dificultad:"media",puntuacion:2},
+{id:16,section_id:4,enunciado:"Forma tres palabras a partir de «amable».",solucion:"amabilidad, desamable, amablemente...",tipo:"vocabulario",criterio:"9.2",dificultad:"media",puntuacion:2},
+{id:17,section_id:5,enunciado:"Coloca la tilde: animo (dar fuerzas), animo (yo), animo (él ayer)",solucion:"ánimo (llana), animo (llana), animó (aguda)",tipo:"ortografía",criterio:"9.1",dificultad:"media",puntuacion:2},
+{id:18,section_id:5,enunciado:"Frase con práctico y practicó.",solucion:"Es un libro práctico. / Ayer practicó fútbol.",tipo:"ortografía",criterio:"5.1",dificultad:"baja",puntuacion:2},
+{id:19,section_id:5,enunciado:"Descifra y acentúa: 3l r4b1 m2g1c5 3st2 3sc5nd1d5 3n 3l j2rd1n",solucion:"El robo mágico está escondido en el jardín.",tipo:"ortografía",criterio:"9.1",dificultad:"alta",puntuacion:2},
+{id:20,section_id:5,enunciado:"Clasifica: camion, facil, esdrujula, examenes",solucion:"camión (aguda), fácil (llana), esdrújula, exámenes",tipo:"ortografía",criterio:"9.1",dificultad:"media",puntuacion:2}
+];
+let selected = [], exams = JSON.parse(localStorage.getItem("aula_exams")||"[]"), nextId=21;
 
-    <main class="flex-1 ml-64 p-6 md:p-8">
-      <div id="content"></div>
-    </main>
-  </div>
+document.querySelectorAll(".nav-btn").forEach(b=>b.onclick=()=>{
+document.querySelectorAll(".nav-btn").forEach(x=>x.classList.remove("nav-active"));
+b.classList.add("nav-active"); render(b.dataset.view);
+});
 
-  <script>
-    // DATOS EMBEBIDOS (versión reducida para compatibilidad)
-    alert('Esta es una versión temporal. El archivo completo se está subiendo. Por favor, descarga el archivo original o espera la actualización completa.');
-    document.getElementById('content').innerHTML = '<div class="p-8"><h2 class="text-2xl font-bold mb-4">AulaLengua</h2><p>Aplicación docente para 5.º de Primaria - Lengua Castellana (Castilla-La Mancha).</p><p class="mt-4 text-slate-600">El archivo completo está en proceso de subida. Mientras tanto, puedes usar la versión local si la tienes.</p></div>';
-  </script>
+function countBySection(id){return exercises.filter(e=>e.section_id===id).length}
+
+function render(v){
+const el=document.getElementById("content");
+if(v==="home"){
+const ok=SECTIONS.every(s=>countBySection(s.id)>=4);
+el.innerHTML=`<h2 class="text-2xl font-bold mb-1">Panel de control</h2>
+<p class="text-slate-500 text-sm mb-6">Lengua Castellana · 5.º Primaria · Castilla-La Mancha</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+<div class="bg-white border rounded-xl p-4"><div class="text-2xl font-bold text-blue-700">1</div><div class="text-xs text-slate-500">Unidad</div></div>
+<div class="bg-white border rounded-xl p-4"><div class="text-2xl font-bold text-sky-600">5</div><div class="text-xs text-slate-500">Secciones</div></div>
+<div class="bg-white border rounded-xl p-4"><div class="text-2xl font-bold text-emerald-600">${exercises.length}</div><div class="text-xs text-slate-500">Ejercicios</div></div>
+<div class="bg-white border rounded-xl p-4"><div class="text-2xl font-bold text-indigo-600">${exams.length}</div><div class="text-xs text-slate-500">Exámenes</div></div>
+</div>
+<div class="bg-white border rounded-xl p-5 mb-4">
+<h3 class="font-semibold mb-3"><i class="fas fa-check-circle text-emerald-500"></i> Cobertura mínima (4 ej./sección)</h3>
+<p class="text-sm mb-3">${ok?"✅ Todas las secciones cumplen el mínimo.":"⚠️ Algunas secciones incompletas."}</p>
+${SECTIONS.map(s=>`<div class="flex justify-between py-1.5 border-b text-sm"><span>${s.title}</span><span class="text-xs px-2 py-0.5 rounded-full ${countBySection(s.id)>=4?"badge-min":"badge-pending"}">${countBySection(s.id)}/4</span></div>`).join("")}
+</div>
+<div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-900">
+<strong>Visor SM:</strong> Accesible visualmente pero protegido. Se usa estructura de ejemplo + currículo oficial.
+</div>`;
+}
+else if(v==="units"){
+el.innerHTML=`<h2 class="text-2xl font-bold mb-4">Unidades y secciones</h2>
+<div class="bg-white border rounded-xl overflow-hidden">
+<div class="bg-gradient-to-r from-blue-700 to-sky-500 text-white px-4 py-2 font-semibold">Unidad 1 – El mundo de Ana</div>
+<div class="p-4 grid md:grid-cols-2 gap-3">
+${SECTIONS.map(s=>`<div class="border rounded-lg p-3">
+<div class="flex justify-between mb-1"><span class="font-medium text-sm">${s.title}</span>
+<span class="text-xs px-2 py-0.5 rounded-full ${countBySection(s.id)>=4?"badge-min":"badge-pending"}">${countBySection(s.id)} ej.</span></div>
+<p class="text-xs text-slate-500 mb-2">${s.contents}</p>
+<button onclick="genMore(${s.id})" class="text-xs bg-sky-50 text-sky-700 px-2 py-1 rounded hover:bg-sky-100"><i class="fas fa-plus"></i> Generar más</button>
+</div>`).join("")}
+</div></div>`;
+}
+else if(v==="bank"){
+el.innerHTML=`<h2 class="text-2xl font-bold mb-4">Banco de ejercicios (${exercises.length})</h2>
+<div class="space-y-2" id="bank"></div>`;
+document.getElementById("bank").innerHTML=exercises.map(e=>`
+<div class="bg-white border rounded-lg p-3 text-sm">
+<div class="flex flex-wrap gap-1 mb-1">
+<span class="text-xs bg-blue-100 text-blue-800 px-1.5 rounded">Sec ${e.section_id}</span>
+<span class="text-xs bg-slate-100 px-1.5 rounded">${e.tipo}</span>
+<span class="text-xs bg-emerald-50 text-emerald-800 px-1.5 rounded">Crit. ${e.criterio}</span>
+<span class="text-xs bg-amber-50 text-amber-800 px-1.5 rounded">${e.dificultad}</span>
+</div>
+<p class="font-medium">${e.enunciado}</p>
+<details class="text-xs mt-1"><summary class="text-sky-600 cursor-pointer">Ver solución</summary>
+<div class="mt-1 p-2 bg-slate-50 rounded">${e.solucion}</div></details>
+<button onclick="addQ(${e.id})" class="mt-2 text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">+ Añadir a examen</button>
+</div>`).join("");
+}
+else if(v==="curriculum"){
+el.innerHTML=`<h2 class="text-2xl font-bold mb-2">Criterios de evaluación</h2>
+<p class="text-sm text-slate-500 mb-4">Decreto 81/2022 · RD 157/2022 · Tercer ciclo</p>
+${CURR.map(c=>`<div class="bg-white border rounded-xl p-4 mb-3 flex gap-3">
+<span class="font-bold text-blue-700 bg-blue-50 px-2 py-1 rounded">${c.codigo}</span>
+<div><p class="font-medium text-sm">${c.redaccion}</p>
+<p class="text-xs text-slate-500 mt-1">${c.competencia} · ${c.saberes}</p></div></div>`).join("")}`;
+}
+else if(v==="create"){
+el.innerHTML=`<h2 class="text-2xl font-bold mb-4">Crear examen</h2>
+<div class="grid lg:grid-cols-2 gap-4">
+<div><h3 class="font-semibold mb-2 text-sm">Banco</h3>
+<div class="space-y-1 max-h-96 overflow-y-auto">
+${exercises.map(e=>`<div class="bg-white border rounded p-2 text-xs cursor-pointer hover:border-sky-400" onclick="addQ(${e.id})">
+<span class="text-slate-400">Crit. ${e.criterio}</span> ${e.enunciado.substring(0,80)}...</div>`).join("")}
+</div></div>
+<div>
+<div class="flex justify-between mb-2"><h3 class="font-semibold text-sm">Examen (${selected.length})</h3>
+<button onclick="saveExam()" class="bg-blue-700 text-white text-xs px-3 py-1 rounded">Guardar</button></div>
+<div class="bg-white border-2 border-dashed rounded-xl p-3 min-h-64 space-y-1" id="exambox">
+${selected.length?selected.map((e,i)=>`<div class="bg-slate-50 border rounded p-2 text-xs flex justify-between">
+<span><b>${i+1}.</b> ${e.enunciado.substring(0,70)}... <span class="text-slate-400">(${e.puntuacion}p)</span></span>
+<button onclick="remQ(${e.id})" class="text-red-500">×</button></div>`).join(""):"<p class='text-slate-400 text-center py-8 text-sm'>Haz clic en ejercicios de la izquierda</p>"}
+</div>
+<div class="mt-2 text-xs bg-slate-50 p-2 rounded" id="cov"></div>
+</div></div>`;
+updateCov();
+}
+else if(v==="exams"){
+el.innerHTML=`<h2 class="text-2xl font-bold mb-4">Mis exámenes</h2>
+${exams.length?exams.map(ex=>`<div class="bg-white border rounded-xl p-4 mb-3 flex justify-between items-center">
+<div><div class="font-semibold">${ex.title}</div>
+<div class="text-xs text-slate-500">${ex.questions.length} preguntas · ${new Date(ex.created).toLocaleString("es")}</div></div>
+<button onclick="preview(${ex.id})" class="text-xs bg-blue-50 text-blue-700 px-3 py-1.5 rounded">Ver / Imprimir</button>
+</div>`).join(""):"<p class='text-slate-500'>Aún no hay exámenes. Ve a «Crear examen».</p>"}`;
+}
+}
+
+function genMore(sid){
+const n=parseInt(prompt("¿Cuántos ejercicios adicionales?","4"))||4;
+const sec=SECTIONS.find(s=>s.id===sid);
+const tipos=["comprensión","gramática","ortografía","vocabulario","expresión escrita"];
+const crits=["4.1","9.1","9.2","5.1","2.1"];
+for(let i=0;i<n;i++){
+exercises.push({id:nextId++,section_id:sid,enunciado:`Variante ${i+1} de «${sec.title}» – actividad de ${tipos[i%5]} para 5.º.`,solucion:"Solución modelo. Revisar por el docente.",tipo:tipos[i%5],criterio:crits[i%5],dificultad:["baja","media","alta"][i%3],puntuacion:2});
+}
+alert(`Generados ${n} ejercicios.`); render("units");
+}
+function addQ(id){const e=exercises.find(x=>x.id===id);if(e&&!selected.find(x=>x.id===id)){selected.push({...e});alert("Añadido. Ve a Crear examen.");}}
+function remQ(id){selected=selected.filter(x=>x.id!==id);render("create");}
+function updateCov(){const c={};selected.forEach(q=>c[q.criterio]=(c[q.criterio]||0)+1);
+const el=document.getElementById("cov");if(el)el.innerHTML=Object.keys(c).length?Object.entries(c).map(([k,v])=>`<b>${k}</b>: ${v} `).join(""):"Sin preguntas";}
+function saveExam(){
+if(!selected.length)return alert("Añade preguntas");
+const t=prompt("Título del examen","Prueba de Lengua 5.º");
+if(!t)return;
+exams.unshift({id:Date.now(),title:t,questions:[...selected],created:new Date().toISOString()});
+localStorage.setItem("aula_exams",JSON.stringify(exams));
+selected=[];alert("Examen guardado.");render("exams");
+}
+function preview(id){
+const ex=exams.find(e=>e.id===id);if(!ex)return;
+const w=window.open("","_blank");
+w.document.write(`<html><head><title>${ex.title}</title><style>body{font-family:system-ui;max-width:800px;margin:30px auto;padding:20px;line-height:1.5}h1{color:#1e40af;border-bottom:3px solid #0ea5e9;padding-bottom:6px}.q{margin:16px 0;padding:12px;border:1px solid #e2e8f0;border-radius:8px}.crit{font-size:11px;color:#64748b}</style></head><body>
+<p style="text-align:center;font-size:12px;color:#64748b">Colegio · LENGUA CASTELLANA · 5.º PRIMARIA</p>
+<h1>${ex.title}</h1>
+<p>Nombre: _______________________________ Fecha: ___/___/______</p>
+<p><b>PUNTUACIÓN TOTAL: _____ / ${ex.questions.reduce((a,q)=>a+(q.puntuacion||2),0)} puntos</b></p>
+${ex.questions.map((q,i)=>`<div class="q"><b>${i+1}.</b> ${q.enunciado} <span style="float:right">(${q.puntuacion||2} p)</span><div class="crit">Criterio ${q.criterio}</div><div style="height:50px;border-bottom:1px dashed #cbd5e1;margin-top:8px"></div></div>`).join("")}
+<p style="margin-top:30px;font-size:11px;color:#94a3b8;text-align:center">Generado con AulaLengua · Decreto 81/2022 CLM</p>
+</body></html>`);
+w.document.close();
+}
+render("home");
+</script>
 </body>
 </html>
